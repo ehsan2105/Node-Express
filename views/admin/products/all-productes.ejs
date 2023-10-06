@@ -1,0 +1,33 @@
+<%- include('../../includes/head',{pageTitle: 'all products' }) %>
+    <link rel="stylesheet" href="/styles/prudoct.css">
+    <script src="/scripts/product-management.js" defer></script>
+    </head>
+
+    <body>
+
+
+        <%- include('../../includes/header') %>
+            <main>
+                <h1>All Products(admin)</h1>
+
+                <section>
+                    <h2>manage</h2>
+                    <p>
+                        <a href="/admin/product/new" class="btn"> add new one</a>
+                    </p>
+
+                </section>
+                <section>
+
+                    <ul id="products-grid">
+                        <% for(const product of products){ %>
+                            <li>
+                                <%- include('includes/product-item',{product:product}) %>
+                            </li>
+                            <% } %>
+                    </ul>
+
+                </section>
+            </main>
+
+            <%- include('../../includes/footer') %>
